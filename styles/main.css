@@ -19,6 +19,10 @@
 
     /* Utilities ************************/
 
+    /* Main Sections width | message holder width is rest of the container (100% - client-holder-width) | */
+    --client-holder-width: 34%;
+
+
     /* height client holder */
     --inner-header-height: 8%;
     --msg-notification-bar-height: 10%;
@@ -58,7 +62,7 @@ header {
 /* Client Section */
 
 .client-holder {
-    width: 34%;
+    width: var(--client-holder-width);
     height: 100%;
     border-right: 1px solid var(--body-background);
 }
@@ -94,7 +98,7 @@ header {
 /* Message Section */
 
 .msg-holder {
-    width: 66%;
+    width: calc(100% - var(--client-holder-width));
     height: 100%;
 }
 
