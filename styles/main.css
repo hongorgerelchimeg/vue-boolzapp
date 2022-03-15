@@ -21,7 +21,7 @@
 }
 
 header {
-    height: 10vh;
+    height: 12vh;
     background-color: var(--wassap-green);
 }
 
@@ -29,12 +29,22 @@ header {
 
 .container {
     position: absolute;
-    height: 95vh;
+    height: 90vh;
     max-width: 1000px;
-    min-width: 700px;
+    min-width: 600px;
     width: 100%;
-    bottom: 0;
+    bottom: 5vh;
     left: 50%;
     transform: translateX(-50%);
     background-color: var(--app-background);
+    display: flex;
 }
+
+/* Client Section */
+
+
+
+
+/* Message Section */
+
+
