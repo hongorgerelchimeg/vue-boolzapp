@@ -8,9 +8,22 @@
 
 /* Variables */
 :root {
+    /* Colors */
     --body-background: #D7D5D0;
     --wassap-green: #22887D;
     --app-background: #E8E6E8;
+    --notification-bg: #8CD1F9;
+    --inner-bg: #fff;
+
+    /* Utilities ************************/
+
+    /* height client holder */
+    --client-header-height: 8%;
+    --msg-notification-bar-height: 10%;
+    --search-height: 4%;
+
+    /* margins */
+    --search-margin: 8px;
 
 }
 
@@ -46,6 +59,32 @@ header {
     width: 34%;
     height: 100%;
     border-right: 1px solid var(--body-background);
+}
+
+.client-header, .msg-notification-bar, 
+.clients-list-holder {
+    width: 100%;
+}
+
+.client-header {
+    height: var(--client-header-height);
+}
+
+.msg-notification-bar {
+    height: var(--msg-notification-bar-height);
+    background-color: var(--notification-bg);
+}
+
+.search {
+    height: var(--search-height);
+    width: calc(100% - 2 * var(--search-margin));
+    margin: var(--search-margin) auto;
+    background-color: var(--inner-bg);
+}
+
+.clients-list-holder {
+    height: calc(100% - var(--client-header-height) - var(--msg-notification-bar-height) - var(--search-height));
+    background-color: var(--inner-bg);
 }
 
 
