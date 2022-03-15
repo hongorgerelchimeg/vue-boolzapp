@@ -42,9 +42,17 @@ header {
 
 /* Client Section */
 
-
+.client-holder {
+    width: 34%;
+    height: 100%;
+    border-right: 1px solid var(--body-background);
+}
 
 
 /* Message Section */
 
-
+.msg-holder {
+    width: 66%;
+    height: 100%;
+    background-color: aqua;
+}
