@@ -45,6 +45,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-weight: 200;
     color: var(--body-color);
+    line-height: 1;
 }
 
 h1 {
@@ -66,7 +67,7 @@ strong {
 }
 
 span {
-    font-size: .7rem;
+    font-size: .6rem;
 }
 
 
@@ -232,7 +233,7 @@ header {
 
 }
 
-.msg-time {
+.clients-msg-time {
     position: absolute;
     right: 1rem;
     top: 1rem;
@@ -264,12 +265,20 @@ header {
     background-color: var(--inputs-bg);
 }
 
+.msg-header {
+    display: flex;
+    align-items: center;
+    padding: var(--holder-padding);
+    justify-content: space-between;
+}
+
 /* Global Div */
 
 .profile-pic-holder {
   margin-right: .5rem;
   display: flex;
   align-items: center;
+  gap: .5rem;
 }
 
 .profile-pic-default {
