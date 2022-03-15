@@ -5,22 +5,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-/* Typography */
-
-body {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 200;
-}
-
-h1 {
-    font-weight: 600;
-    font-size: 1.2em;
-}
-
-h2 {
-    font-weight: 500;
-    font-size: .8em;
-}
 
 /* Variables */
 :root {
@@ -33,6 +17,8 @@ h2 {
     --inner-header-bg: #E8E6E8;
     --inputs-bg: #F3ECE8;
     --main-icon-color: #A9A7A9;
+    --body-color: #6e6e6e;
+    --text-color: #222;
 
     /* Utilities ************************/
 
@@ -48,6 +34,38 @@ h2 {
     /* margins */
     --search-margin: 6px;
 
+    /* Holder Paddings */
+    --holder-padding: 0 1rem;
+}
+
+/* Typography */
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    color: var(--body-color);
+}
+
+h1 {
+    font-weight: 600;
+    font-size: 1.2em;
+    color: var(--text-color);
+}
+
+h2 {
+    font-weight: 500;
+    font-size: .8em;
+    color: var(--text-color);
+}
+
+strong {
+    font-weight: 500;
+    font-size: .8em;
+    color: var(--text-color);
+}
+
+span {
+    font-size: .7rem;
 }
 
 
@@ -116,7 +134,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 1rem;
+    padding: var(--holder-padding);
 }
 
 .client {
@@ -124,7 +142,65 @@ header {
     align-items: center;
 }
 
+.msg-notification-bar {
+    display: flex;
+    align-items: center;
+    padding: var(--holder-padding);
+    gap: .5rem;
 
+}
+
+.notifi-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.notifi-btn a {
+    color: #A1D9F4;
+    cursor: pointer;
+}
+
+.notifi-text {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+}
+.notifi-text a {
+    color: var(--body-color);
+}
+
+.notifi-text > * {
+    line-height: .9;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: var(--holder-padding);
+}
+
+.search input {
+    height: 100%;
+    width: 90%;
+    background-color: var(--inner-bg);
+    border: none;
+    padding-left: .5rem;
+}
+
+.search input:focus-visible {
+    outline: none;
+}
+
+.search i {
+    color: var(--main-icon-color);
+}
 
 
 
@@ -156,6 +232,8 @@ header {
 
 .profile-pic-holder {
   margin-right: .5rem;
+  display: flex;
+  align-items: center;
 }
 
 .profile-pic-default {
