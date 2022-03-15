@@ -87,7 +87,7 @@
 
                         <div :class="msg.status == 'sent' ? 'client-bg' : 'friend-bg'" class="text-msg client-bg">  
                            {{msg.message}}
-                           <div class="text-msg-time">{{msg.date}}</div>
+                           <div class="text-msg-time">{{msg.date.slice(11, -3)}}</div>
                         </div>
 
                     </div>

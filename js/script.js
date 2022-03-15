@@ -72,7 +72,7 @@ const app = new Vue(settings =
                   },
                   {
                      date: '10/01/2020 16:15:22',
-                     message: "Ci manca una persone per il partita LOL! RAANKEED! ",
+                     message: "Ci manca una persone per RAANKEED! ",
                      status: 'sent'
                   },
                   {
