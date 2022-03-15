@@ -19,6 +19,7 @@
     --main-icon-color: #A9A7A9;
     --body-color: #6e6e6e;
     --text-color: #222;
+    --msg-hover-color: #E9EBEB;
 
     /* Utilities ************************/
 
@@ -202,6 +203,41 @@ header {
     color: var(--main-icon-color);
 }
 
+.clients-list {
+    height: 100%;
+    margin-bottom: 1rem;
+    list-style: none;
+    overflow: auto;
+    
+
+}
+
+.clients-list-holder ul li {
+    position: relative;
+}
+
+.clients-list-holder ul li:hover {
+    background-color: var(--msg-hover-color);
+    cursor: pointer;
+}
+
+
+
+
+.clients {
+    display: flex;
+    align-items: center;
+    padding: .8rem 1rem;
+    line-height: 1;
+
+}
+
+.msg-time {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-size: .6rem;
+}
 
 
 /* Message Section */
