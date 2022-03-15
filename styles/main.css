@@ -1,0 +1,40 @@
+/* Reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variables */
+:root {
+    --body-background: #D7D5D0;
+    --wassap-green: #22887D;
+    --app-background: #E8E6E8;
+
+}
+
+
+#root {
+  background-color: var(--body-background);
+  height: 100vh;  
+}
+
+header {
+    height: 10vh;
+    background-color: var(--wassap-green);
+}
+
+/* Main Container */
+
+.container {
+    position: absolute;
+    height: 95vh;
+    max-width: 1000px;
+    min-width: 700px;
+    width: 100%;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--app-background);
+}
