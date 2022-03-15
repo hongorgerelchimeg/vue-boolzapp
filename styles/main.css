@@ -11,14 +11,16 @@
     /* Colors */
     --body-background: #D7D5D0;
     --wassap-green: #22887D;
-    --app-background: #E8E6E8;
+    --app-background: #FAF9FA;
     --notification-bg: #8CD1F9;
     --inner-bg: #fff;
+    --inner-header-bg: #E8E6E8;
+    --inputs-bg: #F3ECE8;
 
     /* Utilities ************************/
 
     /* height client holder */
-    --client-header-height: 8%;
+    --inner-header-height: 8%;
     --msg-notification-bar-height: 10%;
     --search-height: 4%;
 
@@ -67,7 +69,8 @@ header {
 }
 
 .client-header {
-    height: var(--client-header-height);
+    height: var(--inner-header-height);
+    background-color: var(--inner-header-bg);
 }
 
 .msg-notification-bar {
@@ -83,7 +86,7 @@ header {
 }
 
 .clients-list-holder {
-    height: calc(100% - ( var(--client-header-height) + var(--msg-notification-bar-height) + var(--search-height) + (2 * var(--search-margin))));
+    height: calc(100% - ( var(--inner-header-height) + var(--msg-notification-bar-height) + var(--search-height) + (2 * var(--search-margin))));
     background-color: var(--inner-bg);
 }
 
@@ -93,5 +96,21 @@ header {
 .msg-holder {
     width: 66%;
     height: 100%;
-    background-color: aqua;
+}
+
+.msg-header {
+    height: var(--inner-header-height);
+    background-color: var(--inner-header-bg);
+}
+
+.text-area {
+    height: calc(100% - 2 * var(--inner-header-height));
+    background-image: url(../img/mine.jpg);
+    background-position: cover;
+
+}
+
+.inputs-holder {
+    height: var(--inner-header-height);
+    background-color: var(--inputs-bg);
 }
