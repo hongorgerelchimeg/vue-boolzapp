@@ -5,6 +5,22 @@
     padding: 0;
     box-sizing: border-box;
 }
+/* Typography */
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+}
+
+h1 {
+    font-weight: 600;
+    font-size: 1.2em;
+}
+
+h2 {
+    font-weight: 500;
+    font-size: .8em;
+}
 
 /* Variables */
 :root {
@@ -16,6 +32,7 @@
     --inner-bg: #fff;
     --inner-header-bg: #E8E6E8;
     --inputs-bg: #F3ECE8;
+    --main-icon-color: #A9A7A9;
 
     /* Utilities ************************/
 
@@ -94,6 +111,22 @@ header {
     background-color: var(--inner-bg);
 }
 
+/* Client *********/
+.client-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+}
+
+.client {
+    display: flex;
+    align-items: center;
+}
+
+
+
+
 
 /* Message Section */
 
@@ -117,4 +150,41 @@ header {
 .inputs-holder {
     height: var(--inner-header-height);
     background-color: var(--inputs-bg);
+}
+
+/* Global Div */
+
+.profile-pic-holder {
+  margin-right: .5rem;
+}
+
+.profile-pic-default {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--wassap-green);
+    height: 40px;
+    width: 40px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.profile-pic {
+    max-width: 40px;
+    border-radius: 50%;
+}
+
+.settings-holder {
+    display: flex;
+    align-items: center;
+}
+
+.settings-holder > :nth-child(even) {
+    margin: 0 .8rem;
+}
+
+.settings-holder > a {
+    text-decoration: none;
+    color: var(--main-icon-color);
+    cursor: pointer;
 }
