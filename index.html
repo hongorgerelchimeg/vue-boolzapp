@@ -52,7 +52,7 @@
                             </div>
                             <div>
                                 <h2>{{client.name}}</h2>
-                                <span>Ultimo messaggio inviato</span>
+                                <span>{{client.messages.slice(-1)[0].message}}</span>
                             </div>
                             <div class="clients-msg-time">{{client.lastMsg}}</div>
                             
@@ -83,40 +83,15 @@
                     
                 </div>
                 <div class="text-area">
-                    <div class="text-msg-holder client-msg">
+                    <div v-for="(msg, msgIndex) in rightSideObj.messages" :class="msg.status == 'sent' ? 'client-msg' : 'friend-msg'" class="text-msg-holder client-msg" >
 
-                        <div class="text-msg client-bg">  
-                           Hai portato a spasso il cane?
-                           <div class="text-msg-time">15:30</div>
+                        <div :class="msg.status == 'sent' ? 'client-bg' : 'friend-bg'" class="text-msg client-bg">  
+                           {{msg.message}}
+                           <div class="text-msg-time">{{msg.date}}</div>
                         </div>
 
                     </div>
-                    <div class="text-msg-holder client-msg">
-
-                        <div class="text-msg client-bg">  
-                           Ricordati di stendere i panni
-                           <div class="text-msg-time">15:30</div>
-                        </div>
-
-                    </div>
-                    <div class="text-msg-holder friend-msg">
-
-                        <div class="text-msg friend-bg">  
-                           Tutto fatto!
-                           <div class="text-msg-time">16:15</div>
-                        </div>
-
-                    </div>
-
-                    <div class="text-msg-holder client-msg">
-
-                        <div class="text-msg client-bg">  
-                           Hai portato a spasso il cane?
-                           <div class="text-msg-time">15:30</div>
-                        </div>
-
-                    </div>
-                    <div class="text-msg-holder client-msg">
+                    <!-- <div class="text-msg-holder client-msg">
 
                         <div class="text-msg client-bg">  
                            Ricordati di stendere i panni
@@ -131,82 +106,9 @@
                            <div class="text-msg-time">16:15</div>
                         </div>
 
-                    </div>
+                    </div> -->
 
-                    <div class="text-msg-holder client-msg">
-
-                        <div class="text-msg client-bg">  
-                           Hai portato a spasso il cane?
-                           <div class="text-msg-time">15:30</div>
-                        </div>
-
-                    </div>
-                    <div class="text-msg-holder client-msg">
-
-                        <div class="text-msg client-bg">  
-                           Ricordati di stendere i panni
-                           <div class="text-msg-time">15:30</div>
-                        </div>
-
-                    </div>
-                    <div class="text-msg-holder friend-msg">
-
-                        <div class="text-msg friend-bg">  
-                           Tutto fatto!
-                           <div class="text-msg-time">16:15</div>
-                        </div>
-
-                    </div>
-
-                    <div class="text-msg-holder client-msg">
-
-                        <div class="text-msg client-bg">  
-                           Hai portato a spasso il cane?
-                           <div class="text-msg-time">15:30</div>
-                        </div>
-
-                    </div>
-                    <div class="text-msg-holder client-msg">
-
-                        <div class="text-msg client-bg">  
-                           Ricordati di stendere i panni
-                           <div class="text-msg-time">15:30</div>
-                        </div>
-
-                    </div>
-                    <div class="text-msg-holder friend-msg">
-
-                        <div class="text-msg friend-bg">  
-                           Tutto fatto!
-                           <div class="text-msg-time">16:15</div>
-                        </div>
-
-                    </div>
-
-                    <div class="text-msg-holder client-msg">
-
-                        <div class="text-msg client-bg">  
-                           Hai portato a spasso il cane?
-                           <div class="text-msg-time">15:30</div>
-                        </div>
-
-                    </div>
-                    <div class="text-msg-holder client-msg">
-
-                        <div class="text-msg client-bg">  
-                           Ricordati di stendere i panni
-                           <div class="text-msg-time">15:30</div>
-                        </div>
-
-                    </div>
-                    <div class="text-msg-holder friend-msg">
-
-                        <div class="text-msg friend-bg">  
-                           Tutto fatto!
-                           <div class="text-msg-time">16:15</div>
-                        </div>
-
-                    </div>
+                   
                   
                 </div>
                 <div class="inputs-holder">
@@ -227,7 +129,7 @@
         </div>
 
     </div>
-
+    
 
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
