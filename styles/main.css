@@ -339,7 +339,7 @@ header {
     border-radius: 6px;
     background-color: var(--inner-bg);
     border: none;
-    padding-left: .5rem;
+    padding-left: 1rem;
     flex-grow: 1;
 }
 

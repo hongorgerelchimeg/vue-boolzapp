@@ -46,30 +46,17 @@
                 </div>
                 <div class="clients-list-holder">
                     <ul class="clients-list">
-                        <li class="clients">
+                        <li v-for="client in listaContatti" class="clients">
                             <div class="profile-pic-holder">
-                                <img class="profile-pic" src="img/avatar_1.jpg" alt="client avatar">
+                                <img class="profile-pic" :src="`img/${client.avatar}`" alt="client avatar">
                             </div>
                             <div>
-                                <h2>Michele</h2>
+                                <h2>{{client.name}}</h2>
                                 <span>Ultimo messaggio inviato</span>
                             </div>
-                            <div class="clients-msg-time">12:00</div>
+                            <div class="clients-msg-time">{{client.lastMsg}}</div>
                             
                         </li>
-
-                        <li class="clients">
-                            <div class="profile-pic-holder">
-                                <img class="profile-pic" src="img/avatar_2.jpg" alt="client avatar">
-                            </div>
-                            <div>
-                                <h2>Fabio</h2>
-                                <span>Ultimo messaggio inviato</span>
-                            </div>
-                            <div class="clients-msg-time">12:00</div>
-                            
-                        </li>
-
                         
                     </ul>
                 </div>
@@ -224,14 +211,14 @@
                 </div>
                 <div class="inputs-holder">
                     <div class="emoji">
-                        <a href=""><i class="fa-regular fa-face-smile"></i></a>
+                        <a href="#!"><i class="fa-regular fa-face-smile"></i></a>
                     </div>
                     <div class="type-msg">
                         <input type="text" name="type-msg" id="type-msg-input" placeholder="Scrivi un messaggio" max="">
                     </div>
                     <div class="voice-msg-holder">
                         <div class="voice-msg">
-                            <a href=""><i class="fa-solid fa-microphone"></i></a>
+                            <a href="#!"><i class="fa-solid fa-microphone"></i></a>
                         </div>
                     </div>
                 </div>
