@@ -33,7 +33,7 @@
                 </div>
                 <div class="msg-notification-bar">
                     <div class="notifi-icon">
-                        <div class="notifi-btn"><a  href=""><i class="fa-solid fa-bell-slash"></i></a></div>
+                        <div class="notifi-btn"><a  href="#!"><i class="fa-solid fa-bell-slash"></i></a></div>
                     </div>
                     <div class="notifi-text">
                         <div class="text-explain"><strong>Ricevi notifiche di nuovi messaggi</strong></div>
@@ -46,7 +46,7 @@
                 </div>
                 <div class="clients-list-holder">
                     <ul class="clients-list">
-                        <li v-for="client in listaContatti" class="clients">
+                        <li v-for="(client, index) in listaContatti" class="clients" @click="callContactMsg(index)">
                             <div class="profile-pic-holder">
                                 <img class="profile-pic" :src="`img/${client.avatar}`" alt="client avatar">
                             </div>
@@ -65,11 +65,11 @@
                 <div class="msg-header">
                    
                     <div class="profile-pic-holder">
-                        <img class="profile-pic" src="img/avatar_1.jpg" alt="client avatar">
+                        <img class="profile-pic" :src="`img/${rightSideObj.avatar}`" alt="client avatar">
 
                         <div>
-                            <h2>Michele</h2>
-                            <span>Ultimo accesso oggi alle 12:00</span>
+                            <h2>{{rightSideObj.name}}</h2>
+                            <span>Ultimo accesso oggi alle {{rightSideObj.lastMsg}}</span>
                         </div>
                     </div>
                     

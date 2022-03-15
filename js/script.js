@@ -45,12 +45,17 @@ const app = new Vue(settings =
             }
 
          ],
+         rightSideObj: {
+            name: 'Michele',
+            avatar: 'avatar_1.jpg',
+            lastMsg: '12:00'
+         },
          saluto: '',
          
       },
       methods: {
-         saluta: function () {
-            this.saluto = 'Ciao' + " " + this.name;
+         callContactMsg: function (index) {
+            return this.rightSideObj = this.listaContatti[index] ;
          },
 
 
