@@ -233,7 +233,7 @@ const app = new Vue(settings =
       },
       methods: {
          callContactMsg: function(index) {
-            this.rightSideObj = this.listaContatti[index] ;
+            this.rightSideObj = this.filteredListByName[index] ;
             this.rightSideObj.curruntClient = index;
          },
          sendMSG: function() {
@@ -241,13 +241,13 @@ const app = new Vue(settings =
             console.log(index);
             if (this.inputMSG.trim() != '') {
             currentMsg = this.inputMSG;
-            this.listaContatti[index].messages.push({message: currentMsg, status: 'sent', date: DateTime.now().toFormat('dd/MM/yyyy HH:mm:ss')});
+            this.filteredListByName[index].messages.push({message: currentMsg, status: 'sent', date: DateTime.now().toFormat('dd/MM/yyyy HH:mm:ss')});
             this.inputMSG = "";
             setTimeout(() => {
                if (currentMsg.toLowerCase().includes('ciao')) {
-               this.listaContatti[index].messages.push({message: "Ciao! Sofia", status: 'received', date: DateTime.now().toFormat('dd/MM/yyyy HH:mm:ss')});
+               this.filteredListByName[index].messages.push({message: "Ciao! Sofia", status: 'received', date: DateTime.now().toFormat('dd/MM/yyyy HH:mm:ss')});
                } else {
-               this.listaContatti[index].messages.push({message: "Okay!", status: 'received', date: DateTime.now().toFormat('dd/MM/yyyy HH:mm:ss')});
+               this.filteredListByName[index].messages.push({message: "Okay!", status: 'received', date: DateTime.now().toFormat('dd/MM/yyyy HH:mm:ss')});
                }
             }, this.msgDelay);
             } else {
