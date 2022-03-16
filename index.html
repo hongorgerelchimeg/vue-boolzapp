@@ -52,7 +52,7 @@
                             </div>
                             <div>
                                 <h2>{{client.name}}</h2>
-                                <span>{{client.messages.slice(-1)[0].message}}</span>
+                                <!-- <span>{{client.messages.slice(-1)[0].message}}</span> -->
                             </div>
                             <div class="clients-msg-time">{{client.lastMsg}}</div>
                             
@@ -87,36 +87,18 @@
 
                         <div :class="msg.status == 'sent' ? 'client-bg' : 'friend-bg'" class="text-msg client-bg">  
                            {{msg.message}}
-                           <div class="text-msg-time">{{msg.date.slice(11, -3)}}</div>
+                           <!-- <div class="text-msg-time">{{msg.date.slice(11, -3)}}</div> -->
                         </div>
 
                     </div>
-                    <!-- <div class="text-msg-holder client-msg">
-
-                        <div class="text-msg client-bg">  
-                           Ricordati di stendere i panni
-                           <div class="text-msg-time">15:30</div>
-                        </div>
-
-                    </div>
-                    <div class="text-msg-holder friend-msg">
-
-                        <div class="text-msg friend-bg">  
-                           Tutto fatto!
-                           <div class="text-msg-time">16:15</div>
-                        </div>
-
-                    </div> -->
-
-                   
-                  
+                
                 </div>
                 <div class="inputs-holder">
                     <div class="emoji">
                         <a href="#!"><i class="fa-regular fa-face-smile"></i></a>
                     </div>
                     <div class="type-msg">
-                        <input type="text" name="type-msg" id="type-msg-input" placeholder="Scrivi un messaggio" max="">
+                        <input @keyup.enter="sendMSG" v-model="inputMSG" type="text" name="type-msg" id="type-msg-input" placeholder="Scrivi un messaggio" max="">
                     </div>
                     <div class="voice-msg-holder">
                         <div class="voice-msg">
@@ -127,11 +109,11 @@
 
             </div>
         </div>
-
+       
     </div>
     
 
-
+    <script src="https://cdn.jsdelivr.net/npm/luxon@2.3.1/build/global/luxon.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="js/script.js"></script>
 </body>

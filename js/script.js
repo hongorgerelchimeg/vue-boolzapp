@@ -1,7 +1,10 @@
+
+
 const app = new Vue(settings =
    {
       el: '#root',
       data: {
+         inputMSG: '',
          listaContatti: [
             {
                name: 'Michele',
@@ -205,38 +208,42 @@ const app = new Vue(settings =
 
          ],
          rightSideObj: {
-            name: 'Michele',
-            avatar: 'avatar_1.jpg',
-            lastMsg: '12:00',
+            name: '',
+            avatar: '',
+            lastMsg: '',
             visible: true,
-               messages: [
-                  {
-                  date: '10/01/2020 15:30:55',
-                  message: 'Hai portato a spasso il cane?',
-                  status: 'sent'
-                  },
-                  {
-                  date: '10/01/2020 15:50:00',
-                  message: 'Ricordati di stendere i panni',
-                  status: 'sent'
-                  },
-                  {
-                  date: '10/01/2020 16:15:22',
-                  message: 'Tutto fatto!',
-                  status: 'received'
-                  }
-                  ],
+            messages: [
+               {
+               date: '',
+               message: '',
+               status: ''
+               }
+            ],
+            curruntClient: null,
          },
          saluto: '',
          
       },
       methods: {
-         callContactMsg: function (index) {
-            return this.rightSideObj = this.listaContatti[index] ;
+         callContactMsg: function(index) {
+            this.rightSideObj = this.listaContatti[index] ;
+            this.rightSideObj.curruntClient = index;
          },
+         sendMSG: function() {
+            index = this.rightSideObj.curruntClient;
+            console.log(index);
+            curruntMsg = this.inputMSG;
+            this.listaContatti[index].messages.push({message: curruntMsg, status: 'sent', date: new Date()});
+         }
+      
 
 
-      }
+      },
+
+      created() {
+         
+         this.callContactMsg(0);
+      },
    }
 );
 
