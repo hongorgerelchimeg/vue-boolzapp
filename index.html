@@ -98,7 +98,7 @@
                         <a href="#!"><i class="fa-regular fa-face-smile"></i></a>
                     </div>
                     <div class="type-msg">
-                        <input @keyup.enter="sendMSG" v-model="inputMSG" type="text" name="type-msg" id="type-msg-input" placeholder="Scrivi un messaggio" max="">
+                        <input @keyup.enter="sendMSG" v-model="inputMSG" type="text" name="type-msg" id="type-msg-input" class="type-msg-input" :class="emptyMsgError == true ? 'type-msg-input-error' : 'type-msg-input'" :placeholder="textMsgPlaceHolder">
                     </div>
                     <div class="voice-msg-holder">
                         <div class="voice-msg">

@@ -334,7 +334,7 @@ header {
     
 }
 
-#type-msg-input {
+.type-msg-input {
     height: 100%;
     width: 100%;
     border-radius: 6px;
@@ -344,7 +344,18 @@ header {
     flex-grow: 1;
 }
 
-#type-msg-input:focus-visible {
+.type-msg-input-error {
+    /* height: 100%;
+    width: 100%;
+    border-radius: 6px;
+    background-color: var(--inner-bg);
+    border: none;
+    padding-left: 1rem;
+    flex-grow: 1; */
+    background-color: rgba(255, 0, 0, 0.252);
+}
+
+.type-msg-input:focus-visible {
     outline: none;
 }
 

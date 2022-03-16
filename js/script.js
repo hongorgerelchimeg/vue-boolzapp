@@ -5,6 +5,9 @@ const app = new Vue(settings =
    {
       el: '#root',
       data: {
+         emptyMsgError: false,
+         textMsgPlaceHolder: 'Scrivi un messaggio',
+         msgDelay: 1000,
          inputMSG: '',
          listaContatti: [
             {
@@ -233,9 +236,27 @@ const app = new Vue(settings =
          sendMSG: function() {
             index = this.rightSideObj.curruntClient;
             console.log(index);
-            curruntMsg = this.inputMSG;
-            this.listaContatti[index].messages.push({message: curruntMsg, status: 'sent', date: DateTime.now().toFormat('dd/MM/yyyy hh:mm:ss')});
-            this.inputMSG = "";  
+            if (this.inputMSG.trim() != '') {
+            currentMsg = this.inputMSG;
+            this.listaContatti[index].messages.push({message: currentMsg, status: 'sent', date: DateTime.now().toFormat('dd/MM/yyyy hh:mm:ss')});
+            this.inputMSG = "";
+            setTimeout(() => {
+               if (currentMsg.toLowerCase().includes('ciao')) {
+               this.listaContatti[index].messages.push({message: "Ciao! Sofia", status: 'received', date: DateTime.now().toFormat('dd/MM/yyyy hh:mm:ss')});
+               } else {
+               this.listaContatti[index].messages.push({message: "Okay!", status: 'received', date: DateTime.now().toFormat('dd/MM/yyyy hh:mm:ss')});
+               }
+            }, this.msgDelay);
+            } else {
+               this.textMsgPlaceHolder = 'Non può essere vuoto!';
+               this.emptyMsgError = true;
+               console.log(this.emptyMsgError)
+               setTimeout(() => {
+                  this.textMsgPlaceHolder = 'Scrivi un messaggio'
+                  this.emptyMsgError = false;
+            }, 3000);
+               
+            }
          }
       
 
