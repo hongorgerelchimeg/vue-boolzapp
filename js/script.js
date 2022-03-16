@@ -1,4 +1,5 @@
 
+let DateTime = luxon.DateTime;
 
 const app = new Vue(settings =
    {
@@ -233,7 +234,8 @@ const app = new Vue(settings =
             index = this.rightSideObj.curruntClient;
             console.log(index);
             curruntMsg = this.inputMSG;
-            this.listaContatti[index].messages.push({message: curruntMsg, status: 'sent', date: new Date()});
+            this.listaContatti[index].messages.push({message: curruntMsg, status: 'sent', date: DateTime.now().toFormat('dd/MM/yyyy hh:mm:ss')});
+            this.inputMSG = "";  
          }
       
 
