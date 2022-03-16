@@ -5,6 +5,8 @@ const app = new Vue(settings =
    {
       el: '#root',
       data: {
+         filteredListByName: [],
+         searchClientByName: '',
          emptyMsgError: false,
          textMsgPlaceHolder: 'Scrivi un messaggio',
          msgDelay: 1000,
@@ -238,13 +240,13 @@ const app = new Vue(settings =
             console.log(index);
             if (this.inputMSG.trim() != '') {
             currentMsg = this.inputMSG;
-            this.listaContatti[index].messages.push({message: currentMsg, status: 'sent', date: DateTime.now().toFormat('dd/MM/yyyy hh:mm:ss')});
+            this.listaContatti[index].messages.push({message: currentMsg, status: 'sent', date: DateTime.now().toFormat('dd/MM/yyyy HH:mm:ss')});
             this.inputMSG = "";
             setTimeout(() => {
                if (currentMsg.toLowerCase().includes('ciao')) {
-               this.listaContatti[index].messages.push({message: "Ciao! Sofia", status: 'received', date: DateTime.now().toFormat('dd/MM/yyyy hh:mm:ss')});
+               this.listaContatti[index].messages.push({message: "Ciao! Sofia", status: 'received', date: DateTime.now().toFormat('dd/MM/yyyy HH:mm:ss')});
                } else {
-               this.listaContatti[index].messages.push({message: "Okay!", status: 'received', date: DateTime.now().toFormat('dd/MM/yyyy hh:mm:ss')});
+               this.listaContatti[index].messages.push({message: "Okay!", status: 'received', date: DateTime.now().toFormat('dd/MM/yyyy HH:mm:ss')});
                }
             }, this.msgDelay);
             } else {
@@ -257,17 +259,30 @@ const app = new Vue(settings =
             }, 3000);
                
             }
-         }
+         },
+         filterList: function() {
+            if (this.searchClientByName == '') {
+               this.filteredListByName.push(...this.listaContatti);
+            }
+            this.filteredListByName = this.listaContatti.filter(client => client.name.toLowerCase().includes(this.searchClientByName.toLowerCase()));
+         },
       
 
 
       },
+      beforeUpdate() {
+         this.filterList();
 
+      },
       created() {
-         
+         this.filterList();
          this.callContactMsg(0);
       },
    }
 );
 
- 
+// Milestone 4
+// Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina) 
+// Milestone 5
+// Cancella messaggio: cliccando sul messaggio appare un menu a tendina che permette di cancellare il messaggio selezionato
+// Visualizzazione ora e ultimo messaggio inviato/ricevuto nella lista dei contatti 

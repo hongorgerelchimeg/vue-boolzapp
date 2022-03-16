@@ -42,11 +42,11 @@
                 </div>
                 <div class="search">
                     <div class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
-                    <input type="text" name="search-bar" id="search-bar" placeholder="Cerca o inizia una nuova chat" max="">
+                    <input v-model="searchClientByName" type="text" name="search-bar" id="search-bar" placeholder="Cerca o inizia una nuova chat" max="">
                 </div>
                 <div class="clients-list-holder">
                     <ul class="clients-list">
-                        <li v-for="(client, index) in listaContatti" class="clients" @click="callContactMsg(index)">
+                        <li v-for="(client, index) in filteredListByName" class="clients" @click="callContactMsg(index)">
                             <div class="profile-pic-holder">
                                 <img class="profile-pic" :src="`img/${client.avatar}`" alt="client avatar">
                             </div>
