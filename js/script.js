@@ -5,7 +5,6 @@ const app = new Vue(settings =
    {
       el: '#root',
       data: {
-         toggleMenuCheck: false,
          lastMsgTime: '',
          filteredListByName: [],
          searchClientByName: '',
@@ -24,16 +23,19 @@ const app = new Vue(settings =
                   date: '10/01/2020 15:30:55',
                   message: 'Hai portato a spasso il cane?',
                   status: 'sent',
+                  toggleMenuCheck: false
                   },
                   {
                   date: '10/01/2020 15:50:00',
                   message: 'Ricordati di stendere i panni',
                   status: 'sent',
+                  toggleMenuCheck: false
                   },
                   {
                   date: '10/01/2020 15:50:22',
                   message: 'Tutto fatto!',
                   status: 'received',
+                  toggleMenuCheck: false
                   }
                   ],
             },
@@ -46,17 +48,20 @@ const app = new Vue(settings =
                   {
                   date: '10/01/2020 15:30:55',
                   message: 'Fabio cosa fai?',
-                  status: 'sent'
+                  status: 'sent',
+                  toggleMenuCheck: false
                   },
                   {
                   date: '10/01/2020 15:50:00',
                   message: 'Niente bello!',
-                  status: 'received'
+                  status: 'received',
+                  toggleMenuCheck: false
                   },
                   {
                   date: '10/01/2020 17:15:22',
                   message: 'Tu invece?!',
                   status: 'received',
+                  toggleMenuCheck: false
                   }
                   ],
             },
@@ -69,32 +74,38 @@ const app = new Vue(settings =
                   {
                   date: '10/01/2020 15:30:55',
                   message: 'Sam ci sei?',
-                  status: 'sent'
+                  status: 'sent',
+                  toggleMenuCheck: false
                   },
                   {
                   date: '10/01/2020 15:50:00',
                   message: 'Ho bisogno di aiuto! ASAP!',
-                  status: 'sent'
+                  status: 'sent',
+                  toggleMenuCheck: false
                   },
                   {
                   date: '10/01/2020 16:15:22',
                   message: "Sono qui! Mi dica!",
-                  status: 'received'
+                  status: 'received',
+                  toggleMenuCheck: false
                   },
                   {
                      date: '10/01/2020 16:15:22',
                      message: "Ci manca una persone per RAANKEED! ",
-                     status: 'sent'
+                     status: 'sent',
+                     toggleMenuCheck: false
                   },
                   {
                      date: '10/01/2020 16:15:22',
                      message: "Sono libero!",
-                     status: 'received'
+                     status: 'received',
+                     toggleMenuCheck: false
                   },
                   {
                      date: '10/01/2020 18:15:22',
                      message: "Bravoo!",
-                     status: 'sent'
+                     status: 'sent',
+                     toggleMenuCheck: false
                   }
                   ],
             },
@@ -107,17 +118,20 @@ const app = new Vue(settings =
                   {
                   date: '10/01/2020 12:30:55',
                   message: 'Hai portato a spasso il cane?',
-                  status: 'sent'
+                  status: 'sent',
+                  toggleMenuCheck: false
                   },
                   {
                   date: '10/01/2020 12:50:00',
                   message: 'Ricordati di stendere i panni',
-                  status: 'sent'
+                  status: 'sent',
+                  toggleMenuCheck: false
                   },
                   {
                   date: '10/01/2020 12:15:22',
                   message: 'Tutto fatto!',
-                  status: 'received'
+                  status: 'received',
+                  toggleMenuCheck: false
                   }
                   ],
             },
@@ -130,17 +144,20 @@ const app = new Vue(settings =
                   {
                   date: '10/01/2020 15:30:55',
                   message: 'Hai portato a spasso il cane?',
-                  status: 'sent'
+                  status: 'sent',
+                  toggleMenuCheck: false
                   },
                   {
                   date: '10/01/2020 15:50:00',
                   message: 'Ricordati di stendere i panni',
-                  status: 'sent'
+                  status: 'sent',
+                  toggleMenuCheck: false
                   },
                   {
                   date: '10/01/2020 16:15:22',
                   message: 'Tutto fatto!',
-                  status: 'received'
+                  status: 'received',
+                  toggleMenuCheck: false
                   }
                   ],
             },
@@ -153,17 +170,20 @@ const app = new Vue(settings =
                   {
                   date: '10/01/2020 15:30:55',
                   message: 'Hai portato a spasso il cane?',
-                  status: 'sent'
+                  status: 'sent',
+                  toggleMenuCheck: false
                   },
                   {
                   date: '10/01/2020 15:50:00',
                   message: 'Ricordati di stendere i panni',
-                  status: 'sent'
+                  status: 'sent',
+                  toggleMenuCheck: false
                   },
                   {
                   date: '10/01/2020 16:15:22',
                   message: 'Tutto fatto!',
-                  status: 'received'
+                  status: 'received',
+                  toggleMenuCheck: false
                   }
                   ],
             },
@@ -176,17 +196,20 @@ const app = new Vue(settings =
                   {
                   date: '10/01/2020 15:30:55',
                   message: 'Hai portato a spasso il cane?',
-                  status: 'sent'
+                  status: 'sent',
+                  toggleMenuCheck: false
                   },
                   {
                   date: '10/01/2020 15:50:00',
                   message: 'Ricordati di stendere i panni',
-                  status: 'sent'
+                  status: 'sent',
+                  toggleMenuCheck: false
                   },
                   {
                   date: '10/01/2020 16:15:22',
                   message: 'Tutto fatto!',
-                  status: 'received'
+                  status: 'received',
+                  toggleMenuCheck: false
                   }
                   ],
             },
@@ -199,17 +222,20 @@ const app = new Vue(settings =
                   {
                   date: '10/01/2020 15:30:55',
                   message: 'Hai portato a spasso il cane?',
-                  status: 'sent'
+                  status: 'sent',
+                  toggleMenuCheck: false
                   },
                   {
                   date: '10/01/2020 15:50:00',
                   message: 'Ricordati di stendere i panni',
-                  status: 'sent'
+                  status: 'sent',
+                  toggleMenuCheck: false
                   },
                   {
                   date: '10/01/2020 15:15:22',
                   message: 'Tutto fatto!',
-                  status: 'received'
+                  status: 'received',
+                  toggleMenuCheck: false
                   }
                   ],
             }
@@ -225,6 +251,7 @@ const app = new Vue(settings =
                date: '',
                message: '',
                status: '',
+               toggleMenuCheck: '',
                }
             ],
             curruntClient: null,
@@ -273,11 +300,13 @@ const app = new Vue(settings =
             return this.lastMsgTime = this.listaContatti[index].messages.slice(-1)[0].date.slice(11, -3);
          },
 
-         toggleMenuBtn: function() {
-            this.toggleMenuCheck = !this.toggleMenuCheck;
+         toggleMenuBtn: function(msg) {
+            msg.toggleMenuCheck = !msg.toggleMenuCheck;
          },
 
-         
+         // addToggleMenuCheckToMsg: function() {
+         //    this.filteredListByName.forEach(client => client.messages.forEach(msg => msg.toggleMenuCheck = false));
+         // }
 
          // deleteMsg: function() {
          //    rightSideObj.
@@ -292,14 +321,14 @@ const app = new Vue(settings =
       },
       beforeUpdate() {
          this.filterList();
-         
+        
          
         
       },
       created() {
          this.filterList();
          this.callContactMsg(0);
-         
+         // this.addToggleMenuCheckToMsg();
       },
    }
 );
