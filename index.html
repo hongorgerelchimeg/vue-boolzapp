@@ -109,8 +109,12 @@
                         <input @keyup.enter="sendMSG" v-model="inputMSG" type="text" name="type-msg" id="type-msg-input" class="type-msg-input" :class="emptyMsgError == true ? 'type-msg-input-error' : 'type-msg-input'" :placeholder="textMsgPlaceHolder">
                     </div>
                     <div class="voice-msg-holder">
-                        <div class="voice-msg">
-                            <a href="#!"><i class="fa-solid fa-microphone"></i></a>
+                        <div v-if="!currentChat" >
+                            <a  href="#!"><i class="fa-solid fa-microphone"></i></a>
+                          
+                        </div>
+                        <div v-else>
+                            <a  @click="sendMSG" href="#!"><i class="fa-solid fa-paper-plane"></i></a>
                         </div>
                     </div>
                 </div>

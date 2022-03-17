@@ -5,6 +5,7 @@ const app = new Vue(settings =
    {
       el: '#root',
       data: {
+         currentChat: false,
          lastMsgTime: '',
          filteredListByName: [],
          searchClientByName: '',
@@ -303,13 +304,15 @@ const app = new Vue(settings =
          toggleMenuBtn: function(msg) {
             msg.toggleMenuCheck = !msg.toggleMenuCheck;
          },
-
-         // addToggleMenuCheckToMsg: function() {
-         //    this.filteredListByName.forEach(client => client.messages.forEach(msg => msg.toggleMenuCheck = false));
-         // }
-
          deleteMsg(index){
             this.rightSideObj.messages.splice(index,1);
+        },
+        currentChatCheck(){
+         if (this.inputMSG.trim() == '') {
+            this.currentChat = false;
+         } else {
+            this.currentChat = true;
+         }
         },
         
       
@@ -321,7 +324,7 @@ const app = new Vue(settings =
       },
       beforeUpdate() {
          this.filterList();
-        
+         this.currentChatCheck();
          
         
       },
