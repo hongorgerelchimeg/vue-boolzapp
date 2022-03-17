@@ -319,6 +319,64 @@ header {
     color: var(--body-color)
 }
 
+.text-msg:hover .dropdown-btn {
+    display: block;
+}
+
+.dropdown-btn {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    color: var(--main-icon-color);
+    cursor: pointer;
+    display: none;
+}
+
+
+
+.msg-dropdown-menu {
+    position: absolute;
+    top: 12.5px;
+    right: -40px;
+    background-color: var(--main-icon-color);
+    color: white;
+    border-radius: 10px;
+    text-align: end;
+    font-size: .8rem;
+    max-width: 12ch;
+    padding: .4rem;
+    z-index: 1;
+    display: none;
+    
+}
+
+.msg-dropdown-menu ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 0 4px;
+    
+}
+
+.msg-dropdown-menu ul li {
+    padding: .2rem;
+    cursor: pointer;
+    
+}
+
+.msg-dropdown-menu ul li:nth-child(even) {
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.msg-dropdown-menu ul li:hover {
+    color: var(--wassap-green);
+}
+
+.display-block {
+    display: block;
+}
 .client-bg {
     background-color: var(--client-msg-bg);
 }

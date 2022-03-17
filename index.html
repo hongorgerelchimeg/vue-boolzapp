@@ -88,6 +88,14 @@
                         <div :class="msg.status == 'sent' ? 'client-bg' : 'friend-bg'" class="text-msg client-bg">  
                            {{msg.message}}
                            <div class="text-msg-time">{{msg.date.slice(11, -3)}}</div>
+                           <div @click="toggleMenuBtn()" class="dropdown-btn"><i class="fa-solid fa-caret-down"></i></div>
+                           <div :class="toggleMenuCheck ? 'display-block' : ''" class="msg-dropdown-menu">
+                               <ul>
+                                   <li><i class="fa-solid fa-info"></i></li>
+                                   <li><i class="fa-solid fa-share"></i></li>
+                                   <li @click="msg.splice(msgIndex, 1)"><i class="fa-solid fa-trash"></i></li>
+                               </ul>
+                           </div>
                         </div>
 
                     </div>
