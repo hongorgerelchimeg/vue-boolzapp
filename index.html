@@ -25,9 +25,12 @@
                         <h2>Sofia</h2>
                     </div>
                     <div class="settings-holder">
+                        <a @click="darkModeChange()" v-if="darkMode" href="#!"><i class="fa-solid fa-sun"></i></a>
+                        <a @click="darkModeChange()" v-else href="#!"><i class="fa-solid fa-moon"></i></a>
                         <a href="#!"><i class="fa-solid fa-circle-notch"></i></a>
                         <a href="#!"><i class="fa-solid fa-message"></i></a>
                         <a href="#!"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                        
 
                     </div>
                 </div>
@@ -44,14 +47,14 @@
                     <div class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
                     <input v-model="searchClientByName" type="text" name="search-bar" id="search-bar" placeholder="Cerca o inizia una nuova chat" max="">
                 </div>
-                <div class="clients-list-holder">
+                <div class="clients-list-holder" :class="darkMode ? 'dark-theme' : ''">
                     <ul class="clients-list">
                         <li v-for="(client, index) in filteredListByName" class="clients" @click="callContactMsg(index)">
                             <div class="profile-pic-holder">
                                 <img class="profile-pic" :src="`img/${client.avatar}`" alt="client avatar">
                             </div>
                             <div>
-                                <h2>{{client.name}}</h2>
+                                <h2 :class="darkMode ? 'dark-theme' : ''">{{client.name}}</h2>
                                 <span>{{client.messages.slice(-1)[0].message}}</span>
                             </div>
                             <div class="clients-msg-time">{{lastMsgTimeIndicator(index)}}</div>
@@ -69,7 +72,7 @@
 
                         <div>
                             <h2>{{rightSideObj.name}}</h2>
-                            <span>Ultimo accesso oggi alle {{rightSideObj.lastMsg}}</span>
+                            <span>{{rightSideObj.lastMsg}}</span>
                         </div>
                     </div>
                     

@@ -5,19 +5,20 @@ const app = new Vue(settings =
    {
       el: '#root',
       data: {
+         darkMode: false,
          currentChat: false,
          lastMsgTime: '',
          filteredListByName: [],
          searchClientByName: '',
          emptyMsgError: false,
          textMsgPlaceHolder: 'Scrivi un messaggio',
-         msgDelay: 1000,
+         msgDelay: 2000,
          inputMSG: '',
          listaContatti: [
             {
                name: 'Michele',
                avatar: 'avatar_1.jpg',
-               lastMsg: '12:00',
+               lastMsg: 'Online',
                visible: true,
                messages: [
                   {
@@ -43,7 +44,7 @@ const app = new Vue(settings =
             {
                name: 'Fabio',
                avatar: 'avatar_2.jpg',
-               lastMsg: '12:00',
+               lastMsg: 'Online',
                visible: true,
                messages: [
                   {
@@ -69,7 +70,7 @@ const app = new Vue(settings =
             {
                name: 'Samuele',
                avatar: 'avatar_3.jpg',
-               lastMsg: '12:00',
+               lastMsg: 'Online',
                visible: true,
                messages: [
                   {
@@ -113,7 +114,7 @@ const app = new Vue(settings =
             {
                name: 'Alessandro B.',
                avatar: 'avatar_4.jpg',
-               lastMsg: '12:00',
+               lastMsg: 'Online',
                visible: true,
                messages: [
                   {
@@ -139,7 +140,7 @@ const app = new Vue(settings =
             {
                name: 'Alessandro L.',
                avatar: 'avatar_5.jpg',
-               lastMsg: '12:00',
+               lastMsg: 'Online',
                visible: true,
                messages: [
                   {
@@ -165,7 +166,7 @@ const app = new Vue(settings =
             {
                name: 'Claudia',
                avatar: 'avatar_6.jpg',
-               lastMsg: '12:00',
+               lastMsg: 'Online',
                visible: true,
                messages: [
                   {
@@ -191,7 +192,7 @@ const app = new Vue(settings =
             {
                name: 'Federico',
                avatar: 'avatar_7.jpg',
-               lastMsg: '12:00',
+               lastMsg: 'Online',
                visible: true,
                messages: [
                   {
@@ -217,7 +218,7 @@ const app = new Vue(settings =
             {
                name: 'Davide',
                avatar: 'avatar_8.jpg',
-               lastMsg: '12:00',
+               lastMsg: 'Online',
                visible: true,
                messages: [
                   {
@@ -270,9 +271,11 @@ const app = new Vue(settings =
             console.log(index);
             if (this.inputMSG.trim() != '') {
             currentMsg = this.inputMSG;
+            this.filteredListByName[index].lastMsg = 'sta scrivendo...';
             this.filteredListByName[index].messages.push({message: currentMsg, status: 'sent', date: DateTime.now().toFormat('dd/MM/yyyy HH:mm:ss'), toggleMenuCheck: false});
             this.inputMSG = "";
             setTimeout(() => {
+               this.filteredListByName[index].lastMsg = `Ultimo accesso alle: ${DateTime.now().toFormat('dd/MM/yyyy HH:mm:ss').slice(11, -3)}`;
                if (currentMsg.toLowerCase().includes('ciao')) {
                this.filteredListByName[index].messages.push({message: "Ciao! Sofia", status: 'received', date: DateTime.now().toFormat('dd/MM/yyyy HH:mm:ss'), toggleMenuCheck: false});
                } else {
@@ -314,6 +317,9 @@ const app = new Vue(settings =
             this.currentChat = true;
          }
         },
+        darkModeChange() {
+           this.darkMode = !this.darkMode;
+        }
         
       
 

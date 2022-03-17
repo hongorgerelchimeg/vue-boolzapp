@@ -466,3 +466,8 @@ header {
     color: var(--main-icon-color);
     cursor: pointer;
 }
+
+.dark-theme {
+    background-color: #222;
+    color: white;
+}
