@@ -308,9 +308,9 @@ const app = new Vue(settings =
          //    this.filteredListByName.forEach(client => client.messages.forEach(msg => msg.toggleMenuCheck = false));
          // }
 
-         // deleteMsg: function() {
-         //    rightSideObj.
-         // }
+         deleteMsg(index){
+            this.rightSideObj.messages.splice(index,1);
+        },
         
       
 
