@@ -14,6 +14,17 @@ const app = new Vue(settings =
          textMsgPlaceHolder: 'Scrivi un messaggio',
          msgDelay: 2000,
          inputMSG: '',
+         replyMessages: [
+            'Tu sei forte!',
+            "Ci sono persone che si credono speciali. Altre che silenziosamente lo sono.",
+            "Le persone diventano speciali quando entrano nei nostri cuori.",
+            "Le persone vere sono speciali, quelle false vorrebbero esserlo.",
+            "Le persone davvero importanti non fanno la morale ma la trama.",
+            "🤩",
+            "😤 😠 😡 🤬 🤯",
+            "💀 ☠️ 👽 👾 🤖",
+            "💩 👻"
+         ],
          listaContatti: [
             {
                name: 'Michele',
@@ -268,7 +279,7 @@ const app = new Vue(settings =
          },
          sendMSG: function() {
             index = this.rightSideObj.curruntClient;
-            console.log(index);
+            let randN = Math.floor(Math.random() * this.replyMessages.length);
             if (this.inputMSG.trim() != '') {
             currentMsg = this.inputMSG;
             this.filteredListByName[index].lastMsg = 'sta scrivendo...';
@@ -279,8 +290,9 @@ const app = new Vue(settings =
                if (currentMsg.toLowerCase().includes('ciao')) {
                this.filteredListByName[index].messages.push({message: "Ciao! Sofia", status: 'received', date: DateTime.now().toFormat('dd/MM/yyyy HH:mm:ss'), toggleMenuCheck: false});
                } else {
-               this.filteredListByName[index].messages.push({message: "Okay!", status: 'received', date: DateTime.now().toFormat('dd/MM/yyyy HH:mm:ss'), toggleMenuCheck: false});
+               this.filteredListByName[index].messages.push({message: this.replyMessages[randN], status: 'received', date: DateTime.now().toFormat('dd/MM/yyyy HH:mm:ss'), toggleMenuCheck: false});
                }
+               this.autoScrollToLast();
             }, this.msgDelay);
             } else {
                this.textMsgPlaceHolder = 'Non può essere vuoto!';
@@ -289,7 +301,7 @@ const app = new Vue(settings =
                setTimeout(() => {
                   this.textMsgPlaceHolder = 'Scrivi un messaggio'
                   this.emptyMsgError = false;
-            }, 3000);
+            }, 4000);
                
             }
          },
@@ -303,11 +315,11 @@ const app = new Vue(settings =
             // console.log(this.listaContatti[index].messages.slice(-1)[0].date);
             return this.lastMsgTime = this.filteredListByName[index].messages.slice(-1)[0].date.slice(11, -3);
          },
-
          toggleMenuBtn: function(msg) {
             msg.toggleMenuCheck = !msg.toggleMenuCheck;
          },
          deleteMsg(index){
+            if(this.rightSideObj.messages[-1] )
             this.rightSideObj.messages.splice(index,1);
         },
         currentChatCheck(){
@@ -319,7 +331,11 @@ const app = new Vue(settings =
         },
         darkModeChange() {
            this.darkMode = !this.darkMode;
-        }
+        },
+        autoScrollToLast() {
+         const msgArea = this.$el.querySelector(".text-area");
+         msgArea.scrollTop = msgArea.scrollHeight;
+      },
         
       
 
