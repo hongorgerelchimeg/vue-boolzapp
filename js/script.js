@@ -301,7 +301,7 @@ const app = new Vue(settings =
          },
          lastMsgTimeIndicator: function(index) {
             // console.log(this.listaContatti[index].messages.slice(-1)[0].date);
-            return this.lastMsgTime = this.listaContatti[index].messages.slice(-1)[0].date.slice(11, -3);
+            return this.lastMsgTime = this.filteredListByName[index].messages.slice(-1)[0].date.slice(11, -3);
          },
 
          toggleMenuBtn: function(msg) {
