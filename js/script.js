@@ -285,6 +285,7 @@ const app = new Vue(settings =
             this.filteredListByName[index].lastMsg = 'sta scrivendo...';
             this.filteredListByName[index].messages.push({message: currentMsg, status: 'sent', date: DateTime.now().toFormat('dd/MM/yyyy HH:mm:ss'), toggleMenuCheck: false});
             this.inputMSG = "";
+            this.autoScrollToLast();
             setTimeout(() => {
                this.filteredListByName[index].lastMsg = `Ultimo accesso alle: ${DateTime.now().toFormat('dd/MM/yyyy HH:mm:ss').slice(11, -3)}`;
                if (currentMsg.toLowerCase().includes('ciao')) {
@@ -335,10 +336,8 @@ const app = new Vue(settings =
         autoScrollToLast() {
          const msgArea = this.$el.querySelector(".text-area");
          msgArea.scrollTop = msgArea.scrollHeight;
-      },
-        
-      
 
+         }
 
       },
       beforeCreated() {
