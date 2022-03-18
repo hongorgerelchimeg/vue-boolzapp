@@ -5,7 +5,7 @@ const app = new Vue(settings =
    {
       el: '#root',
       data: {
-         darkMode: true,
+         darkMode: false,
          currentChat: false,
          lastMsgTime: '',
          filteredListByName: [],
@@ -17,12 +17,13 @@ const app = new Vue(settings =
          replyMessages: [
             'Tu sei forte!',
             "Ci sono persone che si credono speciali. Altre che silenziosamente lo sono.",
-            "Le persone diventano speciali quando entrano nei nostri cuori.",
-            "Le persone vere sono speciali, quelle false vorrebbero esserlo.",
-            "Le persone davvero importanti non fanno la morale ma la trama.",
+            "Ci sono persone che si credono speciali. Altre che silenziosamente lo sono.",
+            "Ci sono persone che si credono speciali. Altre che silenziosamente lo sono.",
             "🤩",
-            "😤 😠 😡 🤬 🤯",
-            "💀 ☠️ 👽 👾 🤖",
+            "😤 😠",
+            "😡 🤬",
+            "🤯",
+            "I am 🤖",
             "💩 👻"
          ],
          listaContatti: [
@@ -269,7 +270,7 @@ const app = new Vue(settings =
             ],
             curruntClient: null,
          },
-         saluto: '',
+      
          
       },
       methods: {
@@ -302,63 +303,53 @@ const app = new Vue(settings =
                setTimeout(() => {
                   this.textMsgPlaceHolder = 'Scrivi un messaggio'
                   this.emptyMsgError = false;
-            }, 4000);
+               }, 4000);
                
-            }
+               }
          },
          filterList: function() {
-            if (this.searchClientByName == '') {
-               this.filteredListByName.push(...this.listaContatti);
-            }
+            if (this.searchClientByName == '') this.filteredListByName.push(...this.listaContatti);
             this.filteredListByName = this.listaContatti.filter(client => client.name.toLowerCase().includes(this.searchClientByName.toLowerCase()));
          },
          lastMsgTimeIndicator: function(index) {
-            // console.log(this.listaContatti[index].messages.slice(-1)[0].date);
             return this.lastMsgTime = this.filteredListByName[index].messages.slice(-1)[0].date.slice(11, -3);
          },
          toggleMenuBtn: function(msg) {
             msg.toggleMenuCheck = !msg.toggleMenuCheck;
          },
          deleteMsg(index){
-            if(this.rightSideObj.messages[-1] )
-            this.rightSideObj.messages.splice(index,1);
-        },
-        currentChatCheck(){
-         if (this.inputMSG.trim() == '') {
+            console.log(this.rightSideObj.messages.length);
+            if(this.rightSideObj.messages.length == 1) {
+               let client = this.rightSideObj.curruntClient;
+               this.filteredListByName.splice(client,1);
+               this.listaContatti.splice(client,1);
+               this.callContactMsg(0);
+            } else {this.rightSideObj.messages.splice(index,1);}
+         },
+         currentChatCheck(){
+            if (this.inputMSG.trim() == '') {
             this.currentChat = false;
-         } else {
+            } else {
             this.currentChat = true;
-         }
-        },
-        darkModeChange() {
+            }
+         },
+         darkModeChange() {
            this.darkMode = !this.darkMode;
-        },
-        autoScrollToLast() {
+         },
+         autoScrollToLast() {
          const msgArea = this.$el.querySelector(".text-area");
          msgArea.scrollTop = msgArea.scrollHeight;
 
          }
 
       },
-      beforeCreated() {
-         
-      },
       beforeUpdate() {
          this.filterList();
          this.currentChatCheck();
-         
-        
       },
       created() {
          this.filterList();
          this.callContactMsg(0);
-         // this.addToggleMenuCheckToMsg();
       },
    }
 );
-
-// Milestone 4
-// Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina) 
-// Milestone 5
-// Cancella messaggio: cliccando sul messaggio appare un menu a tendina che permette di cancellare il messaggio selezionato
-// Visualizzazione ora e ultimo messaggio inviato/ricevuto nella lista dei contatti 

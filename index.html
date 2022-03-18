@@ -25,15 +25,28 @@
                             
                             <h2>Sofia</h2>
                         </div>
+
+                        <!-- IMplemnting Switch input to DarkMode -->
                         <div class="settings-holder">
+                            <a href="#!"><i class="fa-solid fa-sun"></i></a>
+                            <label @change="darkModeChange()" class="switch">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                              </label>
+                            <a href="#!"><i class="fa-solid fa-moon"></i></a>
+                            <a href="#!"><i class="fa-solid fa-circle-notch"></i></a>
+                            <a href="#!"><i class="fa-solid fa-message"></i></a>
+                            <a href="#!"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                        </div>
+
+                        <!-- DarkMode ICON CHANGE ON CLICK -->
+                        <!-- <div class="settings-holder">
                             <a @click="darkModeChange()" v-if="darkMode" href="#!"><i class="fa-solid fa-sun"></i></a>
                             <a @click="darkModeChange()" v-else href="#!"><i class="fa-solid fa-moon"></i></a>
                             <a href="#!"><i class="fa-solid fa-circle-notch"></i></a>
                             <a href="#!"><i class="fa-solid fa-message"></i></a>
                             <a href="#!"><i class="fa-solid fa-ellipsis-vertical"></i></a>
-                            
-
-                        </div>
+                        </div> -->
                     </div>
                     <div class="msg-notification-bar">
                         <div class="notifi-icon">

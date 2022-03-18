@@ -324,6 +324,7 @@ header {
     padding: 2rem 3rem;
     line-height: 1.2;
     padding-bottom: 100px;
+    position: relative;
 }
 
 .text-msg-holder {
@@ -340,7 +341,6 @@ header {
 }
 .text-msg {
     max-width: 80%;
-    min-width: 60%;
     padding: .8rem .8rem 1.1rem;
     border-radius: .6rem;
     color: var(--text-color);
@@ -521,3 +521,64 @@ header {
   ::-webkit-scrollbar-thumb:hover {
     background: rgb(212, 212, 212); 
   }
+
+  /* Switch Style */
+.switch {
+position: relative;
+display: inline-block;
+width: 30px;
+height: 16px;
+}
+
+.switch input { 
+opacity: 0;
+width: 0;
+height: 0;
+}
+
+.slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #ccc;
+-webkit-transition: .4s;
+transition: .4s;
+}
+
+.slider:before {
+position: absolute;
+content: "";
+height: 16px;
+width: 16px;
+left: -2px;
+bottom: 0px;
+background-color: white;
+-webkit-transition: .4s;
+transition: .4s;
+}
+
+input:checked + .slider {
+background-color: #041727;
+}
+
+input:focus + .slider {
+box-shadow: 0 0 1px #041727;
+}
+
+input:checked + .slider:before {
+-webkit-transform: translateX(18px);
+-ms-transform: translateX(18px);
+transform: translateX(18px);
+}
+
+/* Rounded sliders */
+.slider.round {
+border-radius: 30px;
+}
+
+.slider.round:before {
+border-radius: 50%;
+}
