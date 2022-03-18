@@ -15,7 +15,7 @@ const app = new Vue(settings =
          msgDelay: 2000,
          inputMSG: '',
          replyMessages: [
-            'Tu sei forte!',
+            'Tu sei fuori di testa!',
             "Ci sono persone che si credono speciali. Altre che silenziosamente lo sono.",
             "Ci sono persone che si credono speciali. Altre che silenziosamente lo sono.",
             "Ci sono persone che si credono speciali. Altre che silenziosamente lo sono.",
@@ -27,6 +27,50 @@ const app = new Vue(settings =
             "💩 👻"
          ],
          listaContatti: [
+            {
+               name: 'Samuele',
+               avatar: 'avatar_3.jpg',
+               lastMsg: 'Online',
+               visible: true,
+               messages: [
+                  {
+                  date: '10/01/2020 15:30:55',
+                  message: 'Sam ci sei?',
+                  status: 'sent',
+                  toggleMenuCheck: false
+                  },
+                  {
+                  date: '10/01/2020 15:50:00',
+                  message: 'Ho bisogno di aiuto! ASAP!',
+                  status: 'sent',
+                  toggleMenuCheck: false
+                  },
+                  {
+                  date: '10/01/2020 16:15:22',
+                  message: "Sono qui! Mi dica!",
+                  status: 'received',
+                  toggleMenuCheck: false
+                  },
+                  {
+                     date: '10/01/2020 16:15:22',
+                     message: "Ci manca una persone per RAANKEED! ",
+                     status: 'sent',
+                     toggleMenuCheck: false
+                  },
+                  {
+                     date: '10/01/2020 16:15:22',
+                     message: "Sono libero!",
+                     status: 'received',
+                     toggleMenuCheck: false
+                  },
+                  {
+                     date: '10/01/2020 18:15:22',
+                     message: "Bravoo!",
+                     status: 'sent',
+                     toggleMenuCheck: false
+                  }
+                  ],
+            },
             {
                name: 'Michele',
                avatar: 'avatar_1.jpg',
@@ -79,50 +123,7 @@ const app = new Vue(settings =
                   }
                   ],
             },
-            {
-               name: 'Samuele',
-               avatar: 'avatar_3.jpg',
-               lastMsg: 'Online',
-               visible: true,
-               messages: [
-                  {
-                  date: '10/01/2020 15:30:55',
-                  message: 'Sam ci sei?',
-                  status: 'sent',
-                  toggleMenuCheck: false
-                  },
-                  {
-                  date: '10/01/2020 15:50:00',
-                  message: 'Ho bisogno di aiuto! ASAP!',
-                  status: 'sent',
-                  toggleMenuCheck: false
-                  },
-                  {
-                  date: '10/01/2020 16:15:22',
-                  message: "Sono qui! Mi dica!",
-                  status: 'received',
-                  toggleMenuCheck: false
-                  },
-                  {
-                     date: '10/01/2020 16:15:22',
-                     message: "Ci manca una persone per RAANKEED! ",
-                     status: 'sent',
-                     toggleMenuCheck: false
-                  },
-                  {
-                     date: '10/01/2020 16:15:22',
-                     message: "Sono libero!",
-                     status: 'received',
-                     toggleMenuCheck: false
-                  },
-                  {
-                     date: '10/01/2020 18:15:22',
-                     message: "Bravoo!",
-                     status: 'sent',
-                     toggleMenuCheck: false
-                  }
-                  ],
-            },
+           
             {
                name: 'Alessandro B.',
                avatar: 'avatar_4.jpg',
