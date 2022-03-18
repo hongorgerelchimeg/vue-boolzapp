@@ -8,21 +8,6 @@
 
 /* Variables */
 :root {
-    /* Colors */
-    --body-background: #D7D5D0;
-    --wassap-green: #22887D;
-    --app-background: #FAF9FA;
-    --notification-bg: #8CD1F9;
-    --inner-bg: #fff;
-    --inner-header-bg: #E8E6E8;
-    --inputs-bg: #F3ECE8;
-    --main-icon-color: #A9A7A9;
-    --body-color: #6e6e6e;
-    --text-color: #222;
-    --msg-hover-color: #E9EBEB;
-    --client-msg-bg: #D5F9BA;
-    --friend-msg-bg: #fff;
-
     /* Utilities ************************/
 
     /* Main Sections width | message holder width is rest of the container (100% - client-holder-width) | */
@@ -40,6 +25,49 @@
     /* Holder Paddings */
     --holder-padding: 0 1rem;
 }
+/* Color Mode Variables */
+
+.light-theme{
+
+     --body-background: #D7D5D0;
+     --wassap-green: #22887D;
+     --app-background: #FAF9FA;
+     --notification-bg: #8CD1F9;
+     --inner-bg: #fff;
+     --inner-header-bg: #E8E6E8;
+     --inputs-bg: #F3ECE8;
+     --main-icon-color: #A9A7A9;
+     --body-color: #6e6e6e;
+     --text-color: #222;
+     --msg-hover-color: #E9EBEB;
+     --client-msg-bg: #D5F9BA;
+     --friend-msg-bg: #fff;
+     --notify-bg: #fff;
+     --bg-chat-url: url("../img/mine.jpg");
+     --dropdown-text-color: #fff;
+}
+
+.dark-theme {
+
+    --body-background: #404040;
+     --wassap-green: #012E40;
+     --app-background: #5d5d5d;
+     --notification-bg: #012E40;
+     --inner-bg: #555555;
+     --inner-header-bg: #5b5b5b;
+     --inputs-bg: #6c6c6c;
+     --main-icon-color: #c1c1c1;
+     --body-color: #eeeeee;
+     --text-color: #d2d2d2;
+     --msg-hover-color: #323232;
+     --client-msg-bg: #012E40;
+     --friend-msg-bg: rgb(91, 91, 91);
+     --notify-bg: rgb(40, 40, 40);
+     --bg-chat-url: url("../img/whatsapp-dark-theme.jpeg");
+     --dropdown-text-color: #222;
+    
+}
+
 
 /* Typography */
 
@@ -70,10 +98,11 @@ strong {
 
 span {
     font-size: .6rem;
+    color: var(--text-color);
 }
 
 
-#root {
+.outer {
   background-color: var(--body-background);
   height: 100vh;  
 }
@@ -134,6 +163,7 @@ header {
 }
 
 /* Client *********/
+
 .client-header {
     display: flex;
     align-items: center;
@@ -160,7 +190,7 @@ header {
     justify-content: center;
     width: 40px;
     height: 40px;
-    background-color: #fff;
+    background-color: var(--notify-bg);
     border-radius: 50%;
     overflow: hidden;
 }
@@ -194,6 +224,7 @@ header {
     height: 100%;
     width: 90%;
     background-color: var(--inner-bg);
+    color: var(--text-color);
     border: none;
     padding-left: .5rem;
 }
@@ -211,6 +242,7 @@ header {
     margin-bottom: 1rem;
     list-style: none;
     overflow: auto;
+    color: var(--text-color)
     
 
 }
@@ -257,7 +289,7 @@ header {
 
 .text-area {
     height: calc(100% - 2 * var(--inner-header-height));
-    background-image: url(../img/mine.jpg);
+    background-image:  var(--bg-chat-url);
     background-position: cover;
 
 }
@@ -339,7 +371,7 @@ header {
     top: 12.5px;
     right: -40px;
     background-color: var(--main-icon-color);
-    color: white;
+    color: var(--text-color);
     border-radius: 10px;
     text-align: end;
     font-size: .8rem;
@@ -362,16 +394,18 @@ header {
 .msg-dropdown-menu ul li {
     padding: .2rem;
     cursor: pointer;
+    color: var(--dropdown-text-color);
     
 }
 
 .msg-dropdown-menu ul li:nth-child(even) {
     margin-left: 2px;
     margin-right: 2px;
+    
 }
 
 .msg-dropdown-menu ul li:hover {
-    color: var(--wassap-green);
+    color: var(--text-color)
 }
 
 .display-block {
@@ -397,19 +431,13 @@ header {
     width: 100%;
     border-radius: 6px;
     background-color: var(--inner-bg);
+    color: var(--text-color);
     border: none;
     padding-left: 1rem;
     flex-grow: 1;
 }
 
 .type-msg-input-error {
-    /* height: 100%;
-    width: 100%;
-    border-radius: 6px;
-    background-color: var(--inner-bg);
-    border: none;
-    padding-left: 1rem;
-    flex-grow: 1; */
     background-color: rgba(255, 0, 0, 0.252);
 }
 
@@ -421,11 +449,6 @@ header {
     color: var(--body-color);
     font-size: 1.2rem;
 }
-
-
-
-
-
 
 /* Global Div */
 
@@ -452,6 +475,10 @@ header {
     border-radius: 50%;
 }
 
+.right-side-profile {
+    color: var(--text-color);
+}
+
 .settings-holder {
     display: flex;
     align-items: center;
@@ -467,7 +494,25 @@ header {
     cursor: pointer;
 }
 
-.dark-theme {
-    background-color: #222;
-    color: white;
-}
+
+/* Scroll Bar */
+
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: var(--inner-bg) 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(212, 212, 212); 
+  }

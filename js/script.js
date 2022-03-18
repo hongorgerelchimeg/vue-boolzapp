@@ -5,7 +5,7 @@ const app = new Vue(settings =
    {
       el: '#root',
       data: {
-         darkMode: false,
+         darkMode: true,
          currentChat: false,
          lastMsgTime: '',
          filteredListByName: [],
